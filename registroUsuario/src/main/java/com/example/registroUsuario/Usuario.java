@@ -1,6 +1,13 @@
 package com.example.registroUsuario;
 
+import javax.persistence.*;
+
+@Entity
+@Table
 public class Usuario {
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     private String nombre;
     private String direc;
     private String telefono;
@@ -9,6 +16,15 @@ public class Usuario {
         this.nombre = nombre;
         this.direc = direc;
         this.telefono = telefono;
+    }
+
+    @Id
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getNombre() {
