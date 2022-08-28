@@ -1,4 +1,4 @@
-package com.example.registroUsuario;
+package com.example.registroUsuario.Usuario;
 
 import javax.persistence.*;
 
@@ -19,7 +19,7 @@ public class Usuario {
     }
 
     @Id
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
