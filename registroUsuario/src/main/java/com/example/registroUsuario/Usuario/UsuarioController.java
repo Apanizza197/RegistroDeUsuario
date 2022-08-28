@@ -1,4 +1,4 @@
-package com.example.registroUsuario;
+package com.example.registroUsuario.Usuario;
 
 import org.hibernate.annotations.GeneratorType;
 import org.springframework.stereotype.Controller;

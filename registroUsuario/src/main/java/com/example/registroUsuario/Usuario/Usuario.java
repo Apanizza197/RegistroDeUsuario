@@ -1,4 +1,4 @@
-package com.example.registroUsuario;
+package com.example.registroUsuario.Usuario;
 
 import javax.persistence.*;
 
@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Usuario {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String nombre;
     private String direc;
     private String telefono;
@@ -19,7 +19,7 @@ public class Usuario {
     }
 
     @Id
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
