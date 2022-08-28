@@ -5,6 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -14,10 +15,13 @@ import java.util.function.Function;
 @Repository
 public class UsuarioRepositoryImpl implements UsuarioRepository {
 
+    JdbcTemplate jdbcTemplate;
+
     @Override
     public <S extends Usuario> S save(S entity) {
         Object[] sqlParamters = {entity.getNombre(), entity.getDirec(), entity.getTelefono()};
-        String sql = "insert into nombre_tabla(atributos) values(?,?,?)";
+        String sql = "insert into usuario(direc, nombre, telefono) values(?,?,?)";
+        jdbcTemplate.update(sql, sqlParamters);
         return null;
     }
 

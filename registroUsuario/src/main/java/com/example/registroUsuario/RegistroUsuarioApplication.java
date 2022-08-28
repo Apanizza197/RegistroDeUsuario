@@ -25,6 +25,7 @@ public class RegistroUsuarioApplication extends Application {
 	public static void main(String[] args) {
 		SpringApplication.run(RegistroUsuarioApplication.class, args);
 		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(com.example.registroUsuario.AppConfig.class);
+		Usuario usuario1 = new Usuario("juan","b.artigas","091216");
 		//Application.launch(JavaFxApplication.class, args);
 		//UsuarioControllerImpl usuarioController1 = applicationContext.getBean("usuarioControllerImpl", UsuarioControllerImpl.class);
 		launch(args);
