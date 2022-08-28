@@ -11,14 +11,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class UsuarioControllerImpl {
 
     @Autowired
-    private UsuarioService usuarioService;
+    private UsuarioRepository usuarioRepository;
 
 
-    //@PostMapping
-    //@ResponseBody
-    //@GetMapping("/save-student")
     public Usuario save(Usuario usuario) throws Exception {
-        return usuarioService.save(usuario);
+        System.out.println("ok conroller");
+        return usuarioRepository.save(usuario);
     }
 
 

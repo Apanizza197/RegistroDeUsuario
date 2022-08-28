@@ -19,9 +19,11 @@ public class UsuarioRepositoryImpl implements UsuarioRepository {
 
     @Override
     public <S extends Usuario> S save(S entity) {
+        System.out.println("ok repository");
         Object[] sqlParamters = {entity.getNombre(), entity.getDirec(), entity.getTelefono()};
         String sql = "insert into usuario(direc, nombre, telefono) values(?,?,?)";
         jdbcTemplate.update(sql, sqlParamters);
+        System.out.println("-------------> guardado???");
         return null;
     }
 

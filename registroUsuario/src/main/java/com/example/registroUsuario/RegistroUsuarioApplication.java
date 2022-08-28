@@ -22,12 +22,14 @@ public class RegistroUsuarioApplication extends Application {
 	Label etDireccion;
 	Label etTel;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
+		System.out.println("ke");
 		SpringApplication.run(RegistroUsuarioApplication.class, args);
 		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(com.example.registroUsuario.AppConfig.class);
+		UsuarioControllerImpl usuarioController1 = applicationContext.getBean("usuarioControllerImpl", UsuarioControllerImpl.class);
 		Usuario usuario1 = new Usuario("juan","b.artigas","091216");
+		usuarioController1.save(usuario1);
 		//Application.launch(JavaFxApplication.class, args);
-		//UsuarioControllerImpl usuarioController1 = applicationContext.getBean("usuarioControllerImpl", UsuarioControllerImpl.class);
 		launch(args);
 	}
 
