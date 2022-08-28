@@ -23,8 +23,10 @@ public class RegistroUsuarioApplication extends Application {
 	Label etTel;
 
 	public static void main(String[] args) {
-		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(com.example.registroUsuario.AppConfig.class);
 		SpringApplication.run(RegistroUsuarioApplication.class, args);
+		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(com.example.registroUsuario.AppConfig.class);
+		//Application.launch(JavaFxApplication.class, args);
+		//UsuarioControllerImpl usuarioController1 = applicationContext.getBean("usuarioControllerImpl", UsuarioControllerImpl.class);
 		launch(args);
 	}
 
@@ -64,7 +66,7 @@ public class RegistroUsuarioApplication extends Application {
 		botonGuardar.setOnAction(e -> {
 			isString(nombreInput);
 			isInt(telInput);
-			guardarDatos();
+			guardarDatos(nombreInput, direcInput, telInput);
 		});
 
 		etiquetaNombre = new Label("Nombre");
@@ -88,9 +90,15 @@ public class RegistroUsuarioApplication extends Application {
 			window.close();
 		}
 	}
-	private void guardarDatos(){
+	private void guardarDatos(TextField nombreInput, TextField direcInput, TextField telInput){
 		Boolean answer = ConfirmBox.display("Confirmación", "Confirme el guardado: ");
 		if (answer){
+			Usuario usuario1 = new Usuario(nombreInput.getText(), direcInput.getText(), telInput.getText());
+			//UsuarioControllerImpl usuarioController1 = applicationContext.getBean("usuarioControllerImpl", UsuarioControllerImpl.class);
+
+			//como llamo la clase que es una bean???
+			//UsuarioControllerImpl usuarioController = applicationContext.getBean("usuarioControllerImpl", UsuarioControllerImpl.class);
+
 			//aca llamaria metodo que haga Mery para q guarde en la base de datos al cliente
 			//para referirme a los datos ingresados TextField.getText()
 		}

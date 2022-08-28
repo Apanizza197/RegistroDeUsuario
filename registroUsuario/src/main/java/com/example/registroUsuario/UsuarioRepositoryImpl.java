@@ -13,6 +13,16 @@ import java.util.function.Function;
 
 @Repository
 public class UsuarioRepositoryImpl implements UsuarioRepository {
+
+    @Override
+    public <S extends Usuario> S save(S entity) {
+        Object[] sqlParamters = {entity.getNombre(), entity.getDirec(), entity.getTelefono()};
+        String sql = "insert into nombre_tabla(atributos) values(?,?,?)";
+        return null;
+    }
+
+
+
     @Override
     public List<Usuario> findAll() {
         return null;
@@ -61,11 +71,6 @@ public class UsuarioRepositoryImpl implements UsuarioRepository {
     @Override
     public void deleteAll() {
 
-    }
-
-    @Override
-    public <S extends Usuario> S save(S entity) {
-        return null;
     }
 
     @Override
