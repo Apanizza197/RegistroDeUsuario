@@ -5,6 +5,8 @@ import javax.persistence.*;
 @Entity
 @Table
 public class Usuario {
+
+
     @Id
     private Long id;
     @Column (name= "nombre")

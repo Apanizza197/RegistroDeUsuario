@@ -35,10 +35,6 @@ public class RegistroUsuarioApplication extends Application {
 
 		window = primaryStage;
 		window.setTitle("Registrar cliente");
-		window.setOnCloseRequest(e -> {
-			e.consume();
-			closeProgram();
-		});
 
 		GridPane grid = new GridPane();
 		grid.setPadding(new Insets(15,15,15,15));
@@ -62,10 +58,8 @@ public class RegistroUsuarioApplication extends Application {
 		GridPane.setConstraints(telInput,2,3);
 
 		//boton1.setOnAction(e -> window.setScene(scene2)); // cambio de escena
-		botonCancelar.setOnAction(e -> closeProgram());
+		botonCancelar.setOnAction(e -> window.close());
 		botonGuardar.setOnAction(e -> {
-			isString(nombreInput);
-			isInt(telInput);
 			guardarDatos(nombreInput, direcInput, telInput);
 		});
 
@@ -84,15 +78,9 @@ public class RegistroUsuarioApplication extends Application {
 		window.show();
 	}
 
-	private void closeProgram(){
-		Boolean answer = ConfirmBox.display("Confirmación","¿Estas seguro que quieres cancelar y cerrar?");
-		if(answer){
-			window.close();
-		}
-	}
+
 	private void guardarDatos(TextField nombreInput, TextField direcInput, TextField telInput){
-		Boolean answer = ConfirmBox.display("Confirmación", "Confirme el guardado: ");
-		if (answer){
+
 			Usuario usuario1 = new Usuario(nombreInput.getText(), direcInput.getText(), telInput.getText());
 			//UsuarioControllerImpl usuarioController1 = applicationContext.getBean("usuarioControllerImpl", UsuarioControllerImpl.class);
 
@@ -101,24 +89,6 @@ public class RegistroUsuarioApplication extends Application {
 
 			//aca llamaria metodo que haga Mery para q guarde en la base de datos al cliente
 			//para referirme a los datos ingresados TextField.getText()
-		}
 	}
-	private boolean isString(TextField input){
-		//chequear que sea valido con java.util.regex
-		return true;
-
-	}
-	private boolean isInt(TextField input){
-		try{
-			int tel = Integer.parseInt(input.getText());
-			return true;
-
-		}catch(NumberFormatException e){
-			System.out.println("Error: "+input.getText()+ " no es un teléfono válido");
-			return false;
-		}
-	}
-
-
 
 }
