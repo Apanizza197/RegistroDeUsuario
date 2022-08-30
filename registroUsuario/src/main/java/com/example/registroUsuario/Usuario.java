@@ -5,20 +5,26 @@ import javax.persistence.*;
 @Entity
 @Table
 public class Usuario {
-
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private Long id;
+    @Column (name= "nombre")
     private String nombre;
+    @Column
     private String direc;
+    @Column (name = "telefono", unique = true)
     private String telefono;
 
     public Usuario(String nombre, String direc, String telefono) {
+        this.id = 1L;
         this.nombre = nombre;
         this.direc = direc;
         this.telefono = telefono;
     }
 
-    @Id
+    public Usuario() {
+
+    }
+
     public Long getId() {
         return id;
     }

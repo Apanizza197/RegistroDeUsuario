@@ -23,13 +23,10 @@ public class RegistroUsuarioApplication extends Application {
 	Label etTel;
 
 	public static void main(String[] args) throws Exception {
-		System.out.println("ke");
-		SpringApplication.run(RegistroUsuarioApplication.class, args);
-		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(com.example.registroUsuario.AppConfig.class);
-		UsuarioControllerImpl usuarioController1 = applicationContext.getBean("usuarioControllerImpl", UsuarioControllerImpl.class);
+		ApplicationContext applicationContext = SpringApplication.run(RegistroUsuarioApplication.class, args);
+		UsuarioRepository usuarioRepository = (UsuarioRepository) applicationContext.getBean("usuarioRepository");
 		Usuario usuario1 = new Usuario("juan","b.artigas","091216");
-		usuarioController1.save(usuario1);
-		//Application.launch(JavaFxApplication.class, args);
+		usuarioRepository.save(usuario1);
 		launch(args);
 	}
 
@@ -54,7 +51,7 @@ public class RegistroUsuarioApplication extends Application {
 		GridPane.setConstraints(botonCancelar,4,4);
 
 		TextField nombreInput = new TextField();
-		nombreInput.setPromptText("Pepe Hernandez");
+		nombreInput.setPromptText("Pepe Díaz");
 		TextField direcInput = new TextField();
 		direcInput.setPromptText("Calle Este 1234");
 		TextField telInput = new TextField();
