@@ -1,4 +1,5 @@
 package com.example.registroUsuario.controlador;
+import net.rgielen.fxweaver.core.FxmlView;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -6,12 +7,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-@Component
+@Controller
+@FxmlView("vista_archivo.fxml")
 public class ControllerJavaFX implements Initializable {
     @Autowired
     UsuarioRepository usuarioRepository;
@@ -30,11 +32,7 @@ public class ControllerJavaFX implements Initializable {
 
     @FXML
     public void guardarDatos(ActionEvent actionEvent) {
-
-        Usuario u = new Usuario(txtNombre.getText(),txtDirec.getText(),txtTel.getText());
-
+        Usuario u = new Usuario(txtNombre.getText(), txtDirec.getText(), txtTel.getText());
         usuarioRepository.save(u);
-
-
     }
 }

@@ -1,5 +1,6 @@
 package com.example.registroUsuario.controlador;
 
+import com.example.registroUsuario.controlador.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
