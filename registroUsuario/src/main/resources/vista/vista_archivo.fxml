@@ -19,7 +19,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <TextField fx:id="txtNombre" layoutX="169.0" layoutY="53.0" prefHeight="25.0" prefWidth="187.0" promptText="Pepe Hernandez" />
+      <TextField fx:id="txtNombre" layoutX="169.0" layoutY="53.0" prefHeight="25.0" prefWidth="187.0" promptText="Pepe Díaz" />
       <TextField fx:id="txtDirec" layoutX="169.0" layoutY="92.0" prefHeight="25.0" prefWidth="187.0" promptText="Calle Este 1234" />
       <TextField fx:id="txtTel" layoutX="169.0" layoutY="131.0" prefHeight="25.0" prefWidth="187.0" promptText="091234567" />
       <Label layoutX="101.0" layoutY="57.0" text="Nombre" />
