@@ -1,7 +1,5 @@
 package com.example.registroUsuario.controlador;
 
-import com.example.registroUsuario.Usuario;
-import com.example.registroUsuario.UsuarioRepository;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
@@ -16,8 +14,8 @@ public class RegistroUsuarioApplication extends Application {
 
 	public static void main(String[] args) throws Exception {
 		ApplicationContext applicationContext = SpringApplication.run(RegistroUsuarioApplication.class, args);
-		/*UsuarioRepository usuarioRepository = (UsuarioRepository) applicationContext.getBean("usuarioRepository");
-		Usuario usuario1 = new Usuario("juan","b.artigas","091216");
+
+		/*Usuario usuario1 = new Usuario("juan","b.artigas","091216");
 		usuarioRepository.save(usuario1);*/
 		launch(args);
 	}
