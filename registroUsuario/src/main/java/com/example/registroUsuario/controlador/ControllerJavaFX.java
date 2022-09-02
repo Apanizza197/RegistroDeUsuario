@@ -1,4 +1,5 @@
 package com.example.registroUsuario.controlador;
+import net.rgielen.fxweaver.core.FxmlView;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,6 +13,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 @Controller
+@FxmlView("vista_archivo.fxml")
 public class ControllerJavaFX implements Initializable {
 
     @Autowired
