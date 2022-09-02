@@ -1,7 +1,5 @@
 package com.example.registroUsuario.controlador;
 
-import com.example.registroUsuario.Usuario;
-import com.example.registroUsuario.UsuarioRepository;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
@@ -10,12 +8,18 @@ import javafx.stage.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 @SpringBootApplication
 public class RegistroUsuarioApplication extends Application {
+	public static ConfigurableApplicationContext applicationContext;
+
 
 	public static void main(String[] args) throws Exception {
-		ApplicationContext applicationContext = SpringApplication.run(RegistroUsuarioApplication.class, args);
+		//ApplicationContext applicationContext = SpringApplication.run(RegistroUsuarioApplication.class, args);
+
+		//ApplicationContext applicationContext = new AnnotationConfigApplicationContext(com.example.registroUsuario.controlador.AppConfig.class);
 		/*UsuarioRepository usuarioRepository = (UsuarioRepository) applicationContext.getBean("usuarioRepository");
 		Usuario usuario1 = new Usuario("juan","b.artigas","091216");
 		usuarioRepository.save(usuario1);*/
@@ -24,6 +28,7 @@ public class RegistroUsuarioApplication extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		applicationContext = SpringApplication.run(RegistroUsuarioApplication.class);
 		FXMLLoader fxmlLoader = new FXMLLoader(RegistroUsuarioApplication.class.getResource("/vista/vista_archivo.fxml"));
 		Scene scene = new Scene(fxmlLoader.load(), 400, 400);
 		primaryStage.setTitle("Registro usuario");

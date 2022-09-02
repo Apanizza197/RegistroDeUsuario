@@ -1,4 +1,4 @@
-package com.example.registroUsuario;
+package com.example.registroUsuario.controlador;
 
 import javax.persistence.*;
 
