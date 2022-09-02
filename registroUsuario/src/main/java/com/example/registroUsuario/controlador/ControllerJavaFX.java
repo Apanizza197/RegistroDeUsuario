@@ -15,7 +15,6 @@ import java.util.ResourceBundle;
 @Controller
 @FxmlView("vista_archivo.fxml")
 public class ControllerJavaFX implements Initializable {
-
     @Autowired
     UsuarioRepository usuarioRepository;
 

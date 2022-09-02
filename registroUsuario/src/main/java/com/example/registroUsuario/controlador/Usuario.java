@@ -7,17 +7,14 @@ import javax.persistence.*;
 public class Usuario {
 
 
-    @Id
-    private Long id;
     @Column (name= "nombre")
     private String nombre;
     @Column
     private String direc;
-    @Column (name = "telefono", unique = true)
+    @Id
     private String telefono;
 
     public Usuario(String nombre, String direc, String telefono) {
-        this.id = 1L;
         this.nombre = nombre;
         this.direc = direc;
         this.telefono = telefono;
@@ -25,14 +22,6 @@ public class Usuario {
 
     public Usuario() {
 
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getNombre() {
