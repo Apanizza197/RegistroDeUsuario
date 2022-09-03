@@ -27,7 +27,7 @@ javafx {
 }
 
 application {
-	mainClassName = "com.example.registroUsuario.controlador.RegistroUsuarioApplication"
+	mainClassName = "com.example.registroUsuario.Main"
 }
 
 tasks.named('test') {

@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="246.0" prefWidth="404.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.registroUsuario.controlador.ControllerJavaFX">
+<AnchorPane prefHeight="246.0" prefWidth="404.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.registroUsuario.ControllerJavaFX">
    <children>
       <Button fx:id="btnGuardar" layoutX="228.0" layoutY="200.0" mnemonicParsing="false" onAction="#guardarDatos" text="Guardar">
          <font>

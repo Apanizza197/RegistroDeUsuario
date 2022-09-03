@@ -1,34 +1,28 @@
-package com.example.registroUsuario.controlador;
+package com.example.registroUsuario;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
 import javafx.stage.*;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
+public class JavaFXApplication extends Application {
 
-@SpringBootApplication
-public class RegistroUsuarioApplication extends Application {
-
-	public static void main(String[] args) throws Exception {
-		ApplicationContext applicationContext = SpringApplication.run(RegistroUsuarioApplication.class, args);
-
-		/*Usuario usuario1 = new Usuario("juan","b.artigas","091216");
-		usuarioRepository.save(usuario1);*/
-		launch(args);
-	}
+	private Parent root;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		FXMLLoader fxmlLoader = new FXMLLoader(RegistroUsuarioApplication.class.getResource("/vista/vista_archivo.fxml"));
-		Scene scene = new Scene(fxmlLoader.load(), 400, 400);
+		FXMLLoader fxmlLoader = new FXMLLoader();
+		fxmlLoader.setControllerFactory(Main.getContext()::getBean);
+		root = fxmlLoader.load(JavaFXApplication.class.getResourceAsStream("vista_archivo.fxml"));
 		primaryStage.setTitle("Registro usuario");
-		primaryStage.setScene(scene);
+		primaryStage.setScene(new Scene(root));
 		primaryStage.show();
 	}
 
+	@Override
+	public void stop(){
+		Main.getContext().close();
+	}
 /*
 	private void guardarDatos(TextField nombreInput, TextField direcInput, TextField telInput){
 

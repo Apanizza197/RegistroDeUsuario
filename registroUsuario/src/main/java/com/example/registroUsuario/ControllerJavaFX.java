@@ -1,4 +1,4 @@
-package com.example.registroUsuario.controlador;
+package com.example.registroUsuario;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,6 +23,10 @@ public class ControllerJavaFX implements Initializable {
     public TextField txtDirec;
     public TextField txtTel;
 
+
+    public ControllerJavaFX() {
+        System.out.println("COnstructor!!!");
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
